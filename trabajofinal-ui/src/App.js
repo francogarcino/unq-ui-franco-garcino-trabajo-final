@@ -1,10 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
+import NoMatch from "./views/NoMatch";
 import HomeView from "./views/HomePage";
 import InfoView from "./views/HelpPage"
 import SingleplayerView from "./views/SingleplayerGamePage";
-
-const NoMatch = () => <div className="no-match">NoMatch</div>
 
 function App() {
   return (
