@@ -1,0 +1,42 @@
+.home-container {
+    text-align: center;
+}
+
+.title {
+    color: aliceblue;
+    font-size: 30px;
+}
+
+.home-button {
+    margin: 1rem;
+    width: 10rem;
+    height: 4rem;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+    background-color: darkgray;
+    cursor: pointer;
+}
+
+.button-container {
+    right: 50%;
+}
+
+.game-zone {
+    display: inline-block;
+    width: 70%;
+    height: 78vh;
+    margin: 1rem;
+    background-color: #545C6B;
+}
+
+.game-buttons-container {
+    vertical-align: top;
+    display: inline-block;
+    width: 25%;
+    height: 78vh;
+    margin: 1rem;
+}
