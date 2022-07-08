@@ -9,6 +9,7 @@ export default function SingleplayerView() {
 
     const [playerScore, setPlayerScore] = useState(0)
     const [iaScore, setIAScore] = useState(0)
+    const [lastWinner, setWinner] = useState("")
 
     const resetState = () => {
         setPlayerScore(0)
@@ -21,20 +22,25 @@ export default function SingleplayerView() {
             <p className="title">Partida contra la IA</p>
             <div className="game-container">
                 <div className="game-zone">
-                    <OptionMiniCard key={"Piedra"} option={"Piedra"} />
-                    <OptionMiniCard key={"Papel"} option={"Papel"} />
-                    <OptionMiniCard key={"Tijera"} option={"Tijera"} />
-                    <OptionMiniCard key={"Lagarto"} option={"Lagarto"} />
-                    <OptionMiniCard key={"Spock"} option={"Spock"} />
+                    <div className="card-container">
+                        <OptionMiniCard key={"Piedra"} option={"Piedra"} img={require("../assets/rock-card-image.png")} />
+                        <OptionMiniCard key={"Papel"} option={"Papel"} img={require("../assets/paper-card-img.png")} />
+                        <OptionMiniCard key={"Tijera"} option={"Tijera"} img={require("../assets/scissors-card-img.png")} />
+                        <OptionMiniCard key={"Lagarto"} option={"Lagarto"} img={require("../assets/lizard-card-img.png")} />
+                        <OptionMiniCard key={"Spock"} option={"Spock"} img={require("../assets/spock-card-img.png")} />
+                    </div>
                 </div>
                 <div className="game-buttons-container">
-                        <div className="game-button buttons">Elegir opción</div>
-                        <div className="game-button buttons">Jugar turno</div>
-                        <div className="game-button buttons" onClick={resetState}>Reiniciar contador</div>
-                        <div className="game-button buttons" onClick={goToHome}>Volver al menu principal</div>
+                    <div className="game-button buttons">Elegir opción</div>
+                    <div className="game-button buttons">Jugar turno</div>
+                    <div className="game-button buttons" onClick={resetState}>Reiniciar contador</div>
+                    <div className="game-button buttons" onClick={goToHome}>Volver al menu principal</div>
                     <div className="score-container">
                         <p>Jugador: {playerScore}</p>
                         <p>Computadora: {iaScore}</p>
+                    </div>
+                    <div>
+                        { lastWinner ? <p>El ultimo ganador fue {lastWinner}</p> : <p>Esperando jugada...</p>}
                     </div>
                 </div>
             </div>

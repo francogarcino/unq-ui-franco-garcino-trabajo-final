@@ -1,2 +1,3 @@
-.option-card {
+.option-card:hover {
+    background-color: crimson;
 }

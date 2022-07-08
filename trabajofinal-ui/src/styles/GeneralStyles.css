@@ -42,6 +42,13 @@
     background-color: #545C6B;
 }
 
+.card-container {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-gap: 80px;
+}
+
 /* Button Classes */
 .home-button {
     margin: 1rem;
