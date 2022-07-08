@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/GeneralStyles.css"
 
-export default function Home() {
+export default function HomeView() {
     const navigate = useNavigate()
     const playVsIA = () => navigate('/game')
     const showHelp = () => navigate('/help')
@@ -10,12 +10,12 @@ export default function Home() {
     return(
         <div className="home-container">
             <p className="title">Piedra, Papel, Tijera, Lagarto, Spock</p>
-            <div className="button-container">
-                <div className="home-button" onClick={playVsIA}>
-                    Play Against IA
+            <div>
+                <div className="home-button buttons" onClick={playVsIA}>
+                    Jugar contra la IA
                 </div>
-                <div className="home-button" onClick={showHelp}>
-                    Help About Game
+                <div className="home-button buttons" onClick={showHelp}>
+                    Ayuda sobre el juego
                 </div>
             </div>
         </div>

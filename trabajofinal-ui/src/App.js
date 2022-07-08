@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
-import Game1P from "./views/Game";
-import Help from "./views/HelpPage";
-import Home from "./views/Home";
+import HomeView from "./views/HomePage";
+import InfoView from "./views/HelpPage"
+import SingleplayerView from "./views/SingleplayerGamePage";
 
 const NoMatch = () => <div className="no-match">NoMatch</div>
 
@@ -12,9 +12,9 @@ function App() {
       <BrowserRouter>
         <div className="App-header">
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/game" element={<Game1P />} />
-            <Route path="/help" element={<Help />} />
+            <Route exact path="/" element={<HomeView />} />
+            <Route path="/game" element={<SingleplayerView />} />
+            <Route path="/help" element={<InfoView />} />
 
             <Route path='*' element={<NoMatch />} />
           </Routes>
