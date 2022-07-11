@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import OptionMiniCard from "../components/OptionCard";
 import "../styles/GeneralStyles.css"
 
 export default function SingleplayerView() {
@@ -9,6 +8,7 @@ export default function SingleplayerView() {
 
     const [playerScore, setPlayerScore] = useState(0)
     const [iaScore, setIAScore] = useState(0)
+    const [selection, setOption] = useState("")
     const [lastWinner, setWinner] = useState("")
 
     const resetScore = () => {
@@ -23,15 +23,34 @@ export default function SingleplayerView() {
             <div className="game-container">
                 <div className="game-zone">
                     <div className="card-container">
-                        <OptionMiniCard key={"Piedra"} option={"Piedra"} img={require("../assets/rock-card-image.png")} />
-                        <OptionMiniCard key={"Papel"} option={"Papel"} img={require("../assets/paper-card-img.png")} />
-                        <OptionMiniCard key={"Tijera"} option={"Tijera"} img={require("../assets/scissors-card-img.png")} />
-                        <OptionMiniCard key={"Lagarto"} option={"Lagarto"} img={require("../assets/lizard-card-img.png")} />
-                        <OptionMiniCard key={"Spock"} option={"Spock"} img={require("../assets/spock-card-img.png")} />
+                        <div className="option-card" onClick={() => setOption("rock")}>
+                            <img src={require('../assets/rock-card-image.png')} alt="piedra" />
+                        </div>
+
+                        <div className="option-card" onClick={() => setOption("paper")}>
+                            <img src={require('../assets/paper-card-img.png')} alt="papel" />
+                        </div>
+
+                        <div className="option-card" onClick={() => setOption("scissors")}>
+                            <img src={require('../assets/scissors-card-img.png')} alt="tijeras" />
+                        </div>
+
+                        <div className="option-card" onClick={() => setOption("lizard")}>
+                            <img src={require('../assets/lizard-card-img.png')} alt="lagarto" />
+                        </div>
+
+                        <div className="option-card" onClick={() => setOption("spock")}>
+                            <img src={require('../assets/spock-card-img.png')} alt="spock" />
+                        </div>
                     </div>
                 </div>
                 <div className="game-buttons-container">
-                    <div className="game-button buttons">Jugar turno</div>
+                    {
+                        selection ?
+                            <div className="game-button buttons" onClick={() => console.log("ejecutando jugada")}> Jugar turno </div>
+                            :
+                            <div className="game-button disable-button"> Esperando seleccion... </div>
+                    }
                     <div className="game-button buttons" onClick={resetScore}>Reiniciar contador</div>
                     <div className="game-button buttons" onClick={goToHome}>Volver al menu principal</div>
                     <div className="score-container">
@@ -39,10 +58,15 @@ export default function SingleplayerView() {
                         <p>Computadora: {iaScore}</p>
                     </div>
                     <div>
-                        {lastWinner ? <p>El ultimo ganador fue {lastWinner}</p> : <p>Esperando jugada...</p>}
+                        {lastWinner ? <p>El ultimo ganador fue {lastWinner}</p> : <p>No se jugo ninguna mano todavia</p>}
                     </div>
                 </div>
             </div>
         </div>
     )
+}
+
+function iaSelection() {
+    const ops = ["piedra", "papel", "tijera", "lagarto", "spock"]
+    return (ops[Math.floor(Math.random() * 5)])
 }

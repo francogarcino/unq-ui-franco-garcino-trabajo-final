@@ -1,8 +1,0 @@
-.option-card {
-    background-color: darkcyan;
-}
-
-.option-card:hover {
-    background-color: crimson;
-    cursor: pointer;
-}
