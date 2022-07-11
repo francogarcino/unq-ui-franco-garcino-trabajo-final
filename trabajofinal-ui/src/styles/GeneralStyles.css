@@ -47,6 +47,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, 100px);
     grid-gap: 80px;
+    justify-content: center;
 }
 
 /* Button Classes */

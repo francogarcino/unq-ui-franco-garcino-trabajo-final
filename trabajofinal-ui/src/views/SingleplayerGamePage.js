@@ -11,7 +11,7 @@ export default function SingleplayerView() {
     const [iaScore, setIAScore] = useState(0)
     const [lastWinner, setWinner] = useState("")
 
-    const resetState = () => {
+    const resetScore = () => {
         setPlayerScore(0)
         setIAScore(0)
         console.log("Score reseted successfully");
@@ -31,16 +31,15 @@ export default function SingleplayerView() {
                     </div>
                 </div>
                 <div className="game-buttons-container">
-                    <div className="game-button buttons">Elegir opción</div>
                     <div className="game-button buttons">Jugar turno</div>
-                    <div className="game-button buttons" onClick={resetState}>Reiniciar contador</div>
+                    <div className="game-button buttons" onClick={resetScore}>Reiniciar contador</div>
                     <div className="game-button buttons" onClick={goToHome}>Volver al menu principal</div>
                     <div className="score-container">
                         <p>Jugador: {playerScore}</p>
                         <p>Computadora: {iaScore}</p>
                     </div>
                     <div>
-                        { lastWinner ? <p>El ultimo ganador fue {lastWinner}</p> : <p>Esperando jugada...</p>}
+                        {lastWinner ? <p>El ultimo ganador fue {lastWinner}</p> : <p>Esperando jugada...</p>}
                     </div>
                 </div>
             </div>
