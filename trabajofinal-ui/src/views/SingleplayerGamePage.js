@@ -68,6 +68,8 @@ export default function SingleplayerView() {
                             <p>Tijera</p>
                             <img src={require('../assets/scissors-card-img.png')} alt="tijeras" />
                         </div>
+                    </div>
+                    <div className="card-container">
                         <div className="option-card" onClick={() => setPlayerOption("lizard")}>
                             <p>Lagarto</p>
                             <img src={require('../assets/lizard-card-img.png')} alt="lagarto" />
