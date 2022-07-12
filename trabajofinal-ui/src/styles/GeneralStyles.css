@@ -1,5 +1,7 @@
 /* General Use Classes */
-.c-text-container { text-align: center; }
+.c-text-container {
+    text-align: center;
+}
 
 .title {
     color: aliceblue;
@@ -70,7 +72,7 @@
 }
 
 .buttons:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .game-button {
@@ -85,12 +87,17 @@
 }
 
 /* Other Classes */
-.mid-text { font-size: 130%; }
+.mid-text {
+    font-size: 130%;
+}
 
 .option-card {
+    background-color: #8d95a4;
+    transition: all .2s;
 }
 
 .option-card:hover {
-    background-color: cyan;
+    background-color: rgb(97, 220, 59);
     cursor: pointer;
+    transform: scale(1.1);
 }
